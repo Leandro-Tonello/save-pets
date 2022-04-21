@@ -15,6 +15,8 @@ public class ConexionBaseDeDatosTest extends SpringTest{
     @Transactional @Rollback
     public void pruebaConexion(){
         assertThat(session().isConnected()).isTrue();
+        //aca
+
     }
 
     @Test
@@ -28,4 +30,7 @@ public class ConexionBaseDeDatosTest extends SpringTest{
         assertThat(usuario.getId()).isNotNull();
     }
 
-}
+
+    }
+
+
