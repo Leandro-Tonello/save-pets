@@ -4,29 +4,31 @@
 <html>
 <head>
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" >
-    <!-- Bootstrap theme -->
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	    <link rel="stylesheet" href="css/styles.css">
+	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
-<body>
-<div class = "container">
-    <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <form:form action="registrarme" method="POST" modelAttribute="usuario">
-            <h3 class="form-signin-heading">Nuevo Usuario</h3>
-            <hr class="colorgraph"><br>
+<body id="body_registro">
 
-            <form:input path="email" id="email" class="form-control" />
-            <form:input path="clave" type="password" id="clave" class="form-control"/>
-
-            <button id="btn-registrarme" class="btn btn-lg btn-primary btn-block" Type="Submit"/>Registrarme</button>
-        </form:form>
-
-        <c:if test="${not empty error}">
+    <div class="contenedor">
+        <h1 id="Titulo">Bienvenidos</h1>
+        <form:form action="registrarme" method="POST" modelAttribute="datosRegistro">
+        <div id="Login2">
+            <i class="material-icons medium">account_circle</i>  
+        <h3 id="caja">Usuario:<form:input path="email" id="email" class="form-control"/></h3>
+        <h3 id="caja">Contreseña:<form:input path="clave" type="password" id="password" class="form-control"/></h3>
+        <h3 id="caja">Repetir contraseña:<form:input path="repiteClave" type="password" id="password" class="form-control"/></h3>
+        <button id="Boton" class="btn btn-lg btn-primary btn-block" Type="Submit"/>Registrarme</button>
+         </form:form>
+         <c:if test="${not empty error}">
             <h4><span>${error}</span></h4>
             <br>
         </c:if>
+        </div>
     </div>
-</div>
+    </div>
+
+
 
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ></script>
