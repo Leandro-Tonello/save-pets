@@ -1,5 +1,6 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
+import ar.edu.unlam.tallerweb1.modelo.Refugio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -8,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.unlam.tallerweb1.servicios.ServicioRefugio;
+
+import java.util.List;
 
 @Controller
 public class ControladorRefugios {
@@ -22,6 +25,7 @@ public class ControladorRefugios {
     @RequestMapping(path = "/mostrar-refugios", method = RequestMethod.GET)
     public ModelAndView mostrarRefugios(){
         ModelMap modelo = new ModelMap();
+        List<Refugio> listarefugio = servicioRefugio.listarTodos();
         modelo.put("listaDeRefugios", servicioRefugio.listarTodos());
         return new ModelAndView("Refugios",modelo);
     }

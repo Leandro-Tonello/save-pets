@@ -23,9 +23,9 @@ public class ServicioRefugioImpl implements ServicioRefugio {
 	
 	
 	@Override
-	public Refugio agregarRefugio(Refugio refugio) {
+	public void agregarRefugio(Refugio refugio) {
 		repositorioRefugio.guardar(refugio);
-		return refugio;
+
 	}
 
 	@Override

@@ -6,7 +6,7 @@ import ar.edu.unlam.tallerweb1.modelo.Refugio;
 
 public interface ServicioRefugio {
 
-	Refugio agregarRefugio(Refugio refugio);
+	void agregarRefugio(Refugio refugio);
 	Refugio buscarRefugio(Long id);
 	List<Refugio> listarTodos();
 }
