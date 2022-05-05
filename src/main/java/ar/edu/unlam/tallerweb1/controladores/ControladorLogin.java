@@ -36,10 +36,12 @@ public class ControladorLogin {
 	@RequestMapping(path = "/", method = RequestMethod.GET)
 	public ModelAndView inicio() {
 		
-		Refugio refugio1 = new Refugio ("Refugio1", "Alberdi 123", 45643322, 20, 10, "https://www.hogarmania.com/archivos/202011/cosas-donar-refugio-animales-portada-668x400x80xX-1.jpg");
-		servicioRefugio.agregarRefugio(refugio1);
-		
-        servicioUsuario.registrarAdmin();
+//		Refugio refugio1 = new Refugio ("Refugio1", "Alberdi 123", 45643322, 20, 10, "https://www.hogarmania.com/archivos/202011/cosas-donar-refugio-animales-portada-668x400x80xX-1.jpg");
+//		servicioRefugio.agregarRefugio(refugio1);
+//		Refugio refugio2 = new Refugio ("Refugio2", "Albersssdi 1223423", 455643322, 20, 10, "https://www.hogarmania.com/archivos/202011/cosas-donar-refugio-animales-portada-668x400x80xX-1.jpg");
+//		servicioRefugio.agregarRefugio(refugio2);
+
+		servicioUsuario.registrarAdmin();
 		return new ModelAndView("redirect:/login");
 	}
 	
