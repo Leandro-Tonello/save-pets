@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="ar.edu.unlam.tallerweb1.persistencia.ConexionBaseDeDatosTest" time="0.317" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="ar.edu.unlam.tallerweb1.persistencia.ConexionBaseDeDatosTest" time="0.648" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="11.0.7+8-LTS"/>
@@ -65,6 +65,6 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ar.edu.unlam.tallerweb1.persistencia.ConexionBaseDeDatosTest" name="pruebaConexion" time="0.257"/>
-  <testcase classname="ar.edu.unlam.tallerweb1.persistencia.ConexionBaseDeDatosTest" name="crearUsuario" time="0.06"/>
+  <testcase classname="ar.edu.unlam.tallerweb1.persistencia.ConexionBaseDeDatosTest" name="pruebaConexion" time="0.247"/>
+  <testcase classname="ar.edu.unlam.tallerweb1.persistencia.ConexionBaseDeDatosTest" name="crearUsuario" time="0.401"/>
 </testsuite>
