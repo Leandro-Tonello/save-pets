@@ -23,23 +23,15 @@ public class ControladorLogin {
 
 	private ServicioUsuario servicioUsuario;
 	private ServicioLogin servicioLogin;
-	private ServicioRefugio servicioRefugio;
-
 
 	@Autowired
-	public ControladorLogin(ServicioLogin servicioLogin, ServicioUsuario servicioUsuario, ServicioRefugio servicioRefugio){
+	public ControladorLogin(ServicioLogin servicioLogin, ServicioUsuario servicioUsuario){
 		this.servicioUsuario = servicioUsuario;
-		this.servicioLogin= servicioLogin;		
-		this.servicioRefugio = servicioRefugio;
+		this.servicioLogin= servicioLogin;
 	}
 
 	@RequestMapping(path = "/", method = RequestMethod.GET)
 	public ModelAndView inicio() {
-		
-		Refugio refugio1 = new Refugio ("Ayudacan", "Jerónimo Salguero 151,C1177AEA, C1177 AEA, Buenos Aires","01156179472", 20, 10, "https://lh5.googleusercontent.com/p/AF1QipOQ5VaNKJr6i2dzJp06WMbKdT61pb2fsVdjIOOA=w408-h544-k-no");
-		servicioRefugio.agregarRefugio(refugio1);
-		Refugio refugio2 = new Refugio ("Mascotas en Adopción Argentina", "Av. Cnel. Díaz 2488, C1425 CABA", "01122607357", 20,10, "https://lh5.googleusercontent.com/p/AF1QipMLT07zQUVwAygjyLVvClji9M3VV4pXjf99AS32=w408-h306-k-no");
-		servicioRefugio.agregarRefugio(refugio2);
 
         servicioUsuario.registrarAdmin();
 		return new ModelAndView("redirect:/login");

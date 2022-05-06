@@ -1,5 +1,7 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
+import ar.edu.unlam.tallerweb1.controladores.DatosRefugio;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,18 +18,16 @@ public class Refugio {
 	private String direccion;
 	private String numeroTelefono;
 	private Integer capMax;
-	private Integer capMin;
 	private String imagen;
 	
 	public Refugio() {}
 	
-	public Refugio(String nombre, String direccion, String numeroTelefono, Integer capMax, Integer capMin, String imagen) {
-		this.nombre=nombre;
-		this.direccion=direccion;
-		this.numeroTelefono=numeroTelefono;
-		this.capMax=capMax;
-		this.capMin=capMin;
-		this.imagen=imagen;
+	public Refugio(DatosRefugio datosRefugio) {
+		this.nombre=datosRefugio.getNombre();
+		this.direccion=datosRefugio.getDireccion();
+		this.numeroTelefono=datosRefugio.getNumeroTelefono();
+		this.capMax=datosRefugio.getCapmax();
+		this.imagen=datosRefugio.getUrlimagen();
 	}
 
 	public Long getId() {
@@ -60,14 +60,6 @@ public class Refugio {
 
 	public void setCapMax(Integer capMax) {
 		this.capMax = capMax;
-	}
-
-	public Integer getCapMin() {
-		return capMin;
-	}
-
-	public void setCapMin(Integer capMin) {
-		this.capMin = capMin;
 	}
 
 	public String getNumeroTelefono() {

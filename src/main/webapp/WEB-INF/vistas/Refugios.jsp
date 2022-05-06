@@ -16,7 +16,7 @@
   			<div class="card-body">
     		<h5 class="card-title">${refugio.nombre}</h5>
     		<h5 class="card-title">${refugio.direccion}</h5>
-    		<p class="card-text">${refugio.capMin}/${refugio.capMax} Lugares ocupados</p>
+    		<p class="card-text">Capacidad máxima: ${refugio.capMax}</p>
     		<a href="mostrar-animales" class="btn btn-primary">Ver animales</a>
   			</div>
 		</div>

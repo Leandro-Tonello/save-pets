@@ -6,6 +6,7 @@ import com.google.maps.errors.ApiException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -27,15 +28,33 @@ public class ControladorRefugios {
 		this.mapaService = mapaService;
 	}
 
+	@RequestMapping(path = "/registrar-refugio", method = RequestMethod.GET)
+    public ModelAndView mostrarFormularioRegistroRefugio(){
+	    ModelMap model = new ModelMap();
+	    model.put("datosRefugio", new DatosRefugio());
+	    return new ModelAndView("registrar-refugio", model);
+    }
+
+    @RequestMapping(path = "/registrar-refugio", method = RequestMethod.POST)
+    public ModelAndView registrarRefugio(@ModelAttribute("datosRefugio") DatosRefugio datosRefugio){
+	    ModelMap model = new ModelMap();
+	    servicioRefugio.agregarRefugio(datosRefugio);
+	    return mostrarRefugios();
+    }
+
+
     @RequestMapping(path="/mapa-refugios", method = RequestMethod.GET)
     public ModelAndView probarMapApi() throws InterruptedException, ApiException, IOException {
         ModelMap model = new ModelMap();
         List<Refugio> refugios = servicioRefugio.listarTodos();
-        //String direccion = "Curupayti 1320, Moron, Provincia de Buenos Aires";
-        String direccion = refugios.get(0).getDireccion();
-
+        String direccion = "Florencio Varela 1903, B1754 San Justo, Provincia de Buenos Aires";
         String coordenadas = mapaService.convertirDireccionACoordenadas(direccion);
-        model.put("coordenadas", coordenadas);
+        model.put("coordenadasDefault", coordenadas);
+
+        for(Refugio refugio : refugios){
+            refugio.setDireccion(mapaService.convertirDireccionACoordenadas(refugio.getDireccion()));
+        }
+        model.put("refugios", refugios);
         return new ModelAndView("vistaMapaRefugios", model);
     }
 
