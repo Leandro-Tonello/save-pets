@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add Map</title>
+    <title>Mapa Refugios</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
   <!--  <link rel="stylesheet" type="text/css" href="webapp/css/styles.css" />-->
