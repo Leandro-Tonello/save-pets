@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.math.BigInteger;
 
 @Entity
 public class Refugio {
@@ -13,14 +14,14 @@ public class Refugio {
 	private Long id;
 	private String nombre;
 	private String direccion;
-	private Integer numeroTelefono;
+	private String numeroTelefono;
 	private Integer capMax;
 	private Integer capMin;
 	private String imagen;
 	
 	public Refugio() {}
 	
-	public Refugio(String nombre, String direccion, Integer numeroTelefono, Integer capMax, Integer capMin, String imagen) {
+	public Refugio(String nombre, String direccion, String numeroTelefono, Integer capMax, Integer capMin, String imagen) {
 		this.nombre=nombre;
 		this.direccion=direccion;
 		this.numeroTelefono=numeroTelefono;
@@ -69,11 +70,11 @@ public class Refugio {
 		this.capMin = capMin;
 	}
 
-	public Integer getNumeroTelefono() {
+	public String getNumeroTelefono() {
 		return numeroTelefono;
 	}
 
-	public void setNumeroTelefono(Integer numeroTelefono) {
+	public void setNumeroTelefono(String numeroTelefono) {
 		this.numeroTelefono = numeroTelefono;
 	}
 
