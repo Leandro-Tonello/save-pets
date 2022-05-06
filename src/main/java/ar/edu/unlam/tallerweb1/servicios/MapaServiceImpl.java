@@ -21,8 +21,8 @@ public class MapaServiceImpl implements MapaService{
     public String ProbandoApi() throws InterruptedException, ApiException, IOException {
         GeocodingResult[] results = GeocodingApi.geocode(context, "Curupayti 1320, Morón, Provincia de Buenos Aires").await();
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-       // System.out.println(gson.toJson(results[0].addressComponents));
-         return gson.toJson(results[0].addressComponents).toString();
+      //  String coordenadas =  results[0].geometry.location.toString();
+         return gson.toJson(results[0].geometry.location).toString();
     }
 
 
