@@ -10,7 +10,7 @@
     <script>
         // Initialize and add the map
         function initMap() {
-            const micasa = ${data};
+            const micasa = ${coordenadas};
 
             // The map, centered at la casa de igna
             const map = new google.maps.Map(document.getElementById("map"), {

@@ -7,5 +7,6 @@ import java.io.IOException;
 
 public interface MapaService {
 
-    String ProbandoApi() throws InterruptedException, ApiException, IOException;
+    String convertirDireccionACoordenadas(String direccion) throws InterruptedException, ApiException, IOException;
 }
+

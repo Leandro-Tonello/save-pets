@@ -25,9 +25,10 @@ public class MiPrimerControlador
     @RequestMapping(path="/pruebamapapi", method = RequestMethod.GET)
     public ModelAndView probarMapApi() throws InterruptedException, ApiException, IOException {
         ModelMap model = new ModelMap();
-        String data = mapaService.ProbandoApi();
-        model.put("data", data);
-        return new ModelAndView("vistamap", model);
+        String direccion = "Curupayti 1320, Moron, Provincia de Buenos Aires";
+        String coordenadas = mapaService.convertirDireccionACoordenadas(direccion);
+        model.put("coordenadas", coordenadas);
+        return new ModelAndView("vistaMapaRefugios", model);
     }
 
     @RequestMapping(path = "/miprimerurl", method = RequestMethod.GET)

@@ -18,8 +18,8 @@ public class MapaServiceImpl implements MapaService{
     private MapaServiceImpl mapaService;
 
     @Override
-    public String ProbandoApi() throws InterruptedException, ApiException, IOException {
-        GeocodingResult[] results = GeocodingApi.geocode(context, "Curupayti 1320, Morón, Provincia de Buenos Aires").await();
+    public String convertirDireccionACoordenadas(String direccion) throws InterruptedException, ApiException, IOException {
+        GeocodingResult[] results = GeocodingApi.geocode(context, direccion).await();
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
       //  String coordenadas =  results[0].geometry.location.toString();
          return gson.toJson(results[0].geometry.location).toString();
