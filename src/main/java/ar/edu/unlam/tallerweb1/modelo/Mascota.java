@@ -13,28 +13,28 @@ public class Mascota {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String nombre;
+	//private String nombre;
 	private String especie;
-	private Integer edad;
-	private String imagen;
-	private String descripcion;
+	//private Integer edad;
+	//private String imagen;
+	//private String descripcion;
 	private String direccion;
 
 
 	public Mascota() {}
 	
-	public Mascota(DatosMascota datosMascota) {
+	/*public Mascota(DatosMascota datosMascota) {
 		this.nombre=datosMascota.getNombre();
 		this.edad=datosMascota.getEdad();
 		this.imagen=datosMascota.getImagen();
 		this.descripcion=datosMascota.getDescripcion();
 		this.direccion=datosMascota.getDireccion();
 		this.especie=datosMascota.getEspecie();
-	}
+	}*/
 
-	public Mascota(String direccion, String especie){
-		this.direccion=direccion;
-		this.especie = especie;
+	public Mascota(DatosMascota datosMascota){
+		this.direccion=datosMascota.getDireccion();
+		this.especie = datosMascota.getEspecie();
 	}
 
 	public Long getId() {
@@ -45,7 +45,7 @@ public class Mascota {
 		this.id = id;
 	}
 
-	public String getNombre() {
+	/*public String getNombre() {
 		return nombre;
 	}
 
@@ -75,7 +75,7 @@ public class Mascota {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
-	}
+	}*/
 
 	public String getDireccion() {
 		return direccion;

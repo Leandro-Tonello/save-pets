@@ -4,20 +4,20 @@ public class DatosMascota {
 
     //nombre especie edad imagen descripcion direccion
 
-    private String nombre;
+    //private String nombre;
     private String especie;
-    private Integer edad;
-    private String imagen;
-    private String descripcion;
+    //private Integer edad;
+    //private String imagen;
+    //private String descripcion;
     private String direccion;
 
-    public String getNombre() {
+   /* public String getNombre() {
         return nombre;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
+    }*/
 
     public String getEspecie() {
         return especie;
@@ -27,7 +27,7 @@ public class DatosMascota {
         this.especie = especie;
     }
 
-    public Integer getEdad() {
+   /* public Integer getEdad() {
         return edad;
     }
 
@@ -49,7 +49,7 @@ public class DatosMascota {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
+    }*/
 
     public String getDireccion() {
         return direccion;
@@ -61,14 +61,14 @@ public class DatosMascota {
 
     public DatosMascota(){}
 
-    public DatosMascota(String nombre, String especie, Integer edad, String direccion, String descripcion, String imagen){
+   /* public DatosMascota(String nombre, String especie, Integer edad, String direccion, String descripcion, String imagen){
         this.descripcion = descripcion;
         this.nombre = nombre;
         this.direccion = direccion;
         this.edad=edad;
         this.especie=especie;
         this.imagen=imagen;
-    }
+    }*/
 
     public DatosMascota(String especie, String direccion){
         this.especie = especie;

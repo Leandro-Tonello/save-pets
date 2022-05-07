@@ -9,6 +9,9 @@ import org.springframework.stereotype.Repository;
 
 import ar.edu.unlam.tallerweb1.modelo.Mascota;
 
+import javax.transaction.Transactional;
+
+@Transactional
 @Repository("repositorioMascota")
 public class RepositorioMascotaImpl implements RepositorioMascota {
 
