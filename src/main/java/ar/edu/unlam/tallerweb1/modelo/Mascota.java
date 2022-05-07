@@ -1,29 +1,40 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
+import ar.edu.unlam.tallerweb1.controladores.DatosMascota;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class AnimalAAdoptar {
+public class Mascota {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nombre;
+	private String especie;
 	private Integer edad;
 	private String imagen;
 	private String descripcion;
+	private String direccion;
 
 
-	public AnimalAAdoptar() {}
+	public Mascota() {}
 	
-	public AnimalAAdoptar(String nombre, Integer edad, String imagen, String descripcion) {
-		this.nombre=nombre;
-		this.edad=edad;
-		this.imagen=imagen;
-		this.descripcion=descripcion;
+	public Mascota(DatosMascota datosMascota) {
+		this.nombre=datosMascota.getNombre();
+		this.edad=datosMascota.getEdad();
+		this.imagen=datosMascota.getImagen();
+		this.descripcion=datosMascota.getDescripcion();
+		this.direccion=datosMascota.getDireccion();
+		this.especie=datosMascota.getEspecie();
+	}
+
+	public Mascota(String direccion, String especie){
+		this.direccion=direccion;
+		this.especie = especie;
 	}
 
 	public Long getId() {
@@ -64,6 +75,21 @@ public class AnimalAAdoptar {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
-	}	
-	
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public String getEspecie() {
+		return especie;
+	}
+
+	public void setEspecie(String especie) {
+		this.especie = especie;
+	}
 }
