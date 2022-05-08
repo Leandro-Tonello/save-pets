@@ -32,8 +32,6 @@ public class ControladorLogin {
 
 	@RequestMapping(path = "/", method = RequestMethod.GET)
 	public ModelAndView inicio() {
-
-        servicioUsuario.registrarAdmin();
 		return new ModelAndView("redirect:/login");
 	}
 	
