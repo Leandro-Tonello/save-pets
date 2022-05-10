@@ -8,5 +8,4 @@ public interface ServicioUsuario {
 	Usuario registrar(DatosRegistro datosRegistro);
 	Boolean lasClavesSonDistintas(DatosRegistro datosRegistro);
 	Boolean laClaveTieneLongitudIncorrecta(DatosRegistro datosRegistro);
-	void registrarAdmin();
 }

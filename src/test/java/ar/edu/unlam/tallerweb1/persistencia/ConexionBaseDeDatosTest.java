@@ -25,7 +25,7 @@ public class ConexionBaseDeDatosTest extends SpringTest{
         Usuario usuario = new Usuario();
         usuario.setEmail("leandronicolas1177@gmail.com");
         usuario.setPassword("1177");
-        usuario.setRol("ADMIN");
+       // usuario.setRol("ADMIN");
         session().save(usuario);
         assertThat(usuario.getId()).isNotNull();
     }

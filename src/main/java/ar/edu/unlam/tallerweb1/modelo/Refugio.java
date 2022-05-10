@@ -1,9 +1,12 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
+import ar.edu.unlam.tallerweb1.controladores.DatosRefugio;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.math.BigInteger;
 
 @Entity
 public class Refugio {
@@ -13,20 +16,18 @@ public class Refugio {
 	private Long id;
 	private String nombre;
 	private String direccion;
-	private Integer numeroTelefono;
+	private String numeroTelefono;
 	private Integer capMax;
-	private Integer capMin;
 	private String imagen;
 	
 	public Refugio() {}
 	
-	public Refugio(String nombre, String direccion, Integer numeroTelefono, Integer capMax, Integer capMin, String imagen) {
-		this.nombre=nombre;
-		this.direccion=direccion;
-		this.numeroTelefono=numeroTelefono;
-		this.capMax=capMax;
-		this.capMin=capMin;
-		this.imagen=imagen;
+	public Refugio(DatosRefugio datosRefugio) {
+		this.nombre=datosRefugio.getNombre();
+		this.direccion=datosRefugio.getDireccion();
+		this.numeroTelefono=datosRefugio.getNumeroTelefono();
+		this.capMax=datosRefugio.getCapmax();
+		this.imagen=datosRefugio.getUrlimagen();
 	}
 
 	public Long getId() {
@@ -61,19 +62,11 @@ public class Refugio {
 		this.capMax = capMax;
 	}
 
-	public Integer getCapMin() {
-		return capMin;
-	}
-
-	public void setCapMin(Integer capMin) {
-		this.capMin = capMin;
-	}
-
-	public Integer getNumeroTelefono() {
+	public String getNumeroTelefono() {
 		return numeroTelefono;
 	}
 
-	public void setNumeroTelefono(Integer numeroTelefono) {
+	public void setNumeroTelefono(String numeroTelefono) {
 		this.numeroTelefono = numeroTelefono;
 	}
 
