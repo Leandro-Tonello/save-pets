@@ -12,7 +12,7 @@
 
     <div class="contenedor">
         <h1 id="Titulo">Bienvenidos</h1>
-        <form:form action="registrarme" method="POST" modelAttribute="datosRegistro">
+        <form:form action="registrar-usuario" method="POST" modelAttribute="datosRegistro">
         <div id="Login2">
             <i class="material-icons medium">account_circle</i>  
         <h3 id="caja">Usuario:<form:input path="email" id="email" class="form-control"/></h3>

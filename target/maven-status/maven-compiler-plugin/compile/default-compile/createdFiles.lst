@@ -1,5 +1,7 @@
 ar\edu\unlam\tallerweb1\servicios\ServicioUsuario.class
+ar\edu\unlam\tallerweb1\servicios\MapaServiceImpl.class
 ar\edu\unlam\tallerweb1\servicios\UsuarioYaExisteException.class
+ar\edu\unlam\tallerweb1\servicios\MapaService.class
 ar\edu\unlam\tallerweb1\controladores\DatosLogin.class
 ar\edu\unlam\tallerweb1\servicios\ServicioUsuarioImpl.class
 ar\edu\unlam\tallerweb1\servicios\ServicioRefugioImpl.class

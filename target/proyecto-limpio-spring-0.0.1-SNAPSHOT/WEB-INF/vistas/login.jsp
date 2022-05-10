@@ -1,10 +1,9 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <!DOCTYPE html>
 <html>
 	<head>
-	
+
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -13,7 +12,7 @@
 	    <link href="css/bootstrap-theme.min.css" rel="stylesheet">-->
 	</head>
 
-		<body id="body">
+	<body id="body">
     <div class="contenedor">
         <h1 id="Titulo">Bienvenidos</h1>
         <form:form action="validar-login" method="POST" modelAttribute="datosLogin">
