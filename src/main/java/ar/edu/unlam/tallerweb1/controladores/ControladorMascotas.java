@@ -58,4 +58,6 @@ public class ControladorMascotas {
         model.put("mascotas", mascotas);
         return new ModelAndView("vistaMapaMascotas", model);
     }
+
+
 }

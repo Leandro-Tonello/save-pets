@@ -36,7 +36,7 @@ public class ControladorRefugios {
     }
 
     @RequestMapping(path = "/registrar-refugio", method = RequestMethod.POST)
-    public ModelAndView registrarRefugio(@ModelAttribute("datosRefugio") DatosRefugio datosRefugio){
+    public ModelAndView registrarRefugio(@ModelAttribute("datosRefugio") DatosRefugio datosRefugio) throws InterruptedException, ApiException, IOException {
 	    ModelMap model = new ModelMap();
 	    servicioRefugio.agregarRefugio(datosRefugio);
 	    return mostrarRefugios();
@@ -44,17 +44,9 @@ public class ControladorRefugios {
 
 
     @RequestMapping(path="/mapa-refugios", method = RequestMethod.GET)
-    public ModelAndView probarMapApi() throws InterruptedException, ApiException, IOException {
+    public ModelAndView mostrarMapaRefugios() throws InterruptedException, ApiException, IOException {
         ModelMap model = new ModelMap();
-        List<Refugio> refugios = servicioRefugio.listarTodos();
-        String direccion = "Florencio Varela 1903, B1754 San Justo, Provincia de Buenos Aires";
-        String coordenadas = mapaService.convertirDireccionACoordenadas(direccion);
-        model.put("coordenadasDefault", coordenadas);
-
-        for(Refugio refugio : refugios){
-            refugio.setDireccion(mapaService.convertirDireccionACoordenadas(refugio.getDireccion()));
-        }
-        model.put("refugios", refugios);
+        model.put("refugios", servicioRefugio.listarTodos());
         return new ModelAndView("vistaMapaRefugios", model);
     }
 

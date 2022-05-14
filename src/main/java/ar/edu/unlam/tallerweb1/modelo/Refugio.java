@@ -16,6 +16,7 @@ public class Refugio {
 	private Long id;
 	private String nombre;
 	private String direccion;
+	private String coordenadas;
 	private String numeroTelefono;
 	private Integer capMax;
 	private String imagen;
@@ -77,6 +78,8 @@ public class Refugio {
 	public void setImagen(String imagen) {
 		this.imagen = imagen;
 	}
-	
-	
+
+	public String getCoordenadas() {return coordenadas;	}
+
+	public void setCoordenadas(String coordenadas) {this.coordenadas = coordenadas;	}
 }
