@@ -1,40 +1,84 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
+
 <html>
 <head>
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" >
-    <!-- Bootstrap theme -->
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/helps.css" >
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width" initial-scale=1.0>
 </head>
-<body>
-<div class = "container">
-    <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <form:form action="registrar-refugio" method="POST" modelAttribute="datosRefugio">
-            <h3 class="form-signin-heading">Nuevo Refugio</h3>
-            <hr class="colorgraph"><br>
 
-            Nombre: <form:input path="nombre" class="form-control" />
-            Dirección: <form:input path="direccion" class="form-control"/>
-            Teléfono: <form:input path="numeroTelefono" class="form-control"/>
-            Capacidad Máxima: <form:input path="capmax" class="form-control"/>
-            URL de imagen: <form:input path="urlimagen" class="form-control"/>
-
-
-            <button id="btn-registrarme" class="btn btn-lg btn-primary btn-block" Type="Submit"/>Registrar</button>
-        </form:form>
-
-        <c:if test="${not empty error}">
-            <h4><span>${error}</span></h4>
-            <br>
-        </c:if>
+<nav>
+    <div class="nav-wrapper teal darken-1 ">
+        <a href="#" class="ml brand-logo">  Save Pets</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="/mapa-mascotas">Mapa</a></li>
+            <li><a href="/registrar-mascota">Crear Alerta</a></li>
+            <li><a href="/registrar-refugio">Agregar Refugio</a></li>
+        </ul>
     </div>
-</div>
+</nav>
 
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ></script>
-<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<body>
+<div class="row container mt" >
+    <form:form action="registrar-refugio" method="POST" modelAttribute="datosRefugio" class="col s12">
+        <h4 class="center-align">REGISTRAR REFUGIO</h4>
+        <article class="col s6 offset-s3">
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <form:input path="nombre" name="nombre" id="nombre" type="text" class="validate" required="true"/>
+                    <form:label path="nombre" for="nombre">Nombre</form:label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <form:input path="direccion" name="direccion" id="direccion" type="text" class="validate" required="true"/>
+                    <form:label path="direccion" for="direccion">Dirección</form:label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <form:input path="numeroTelefono" name="numeroTelefono" id="numeroTelefono" type="number" class="validate" required="true"/>
+                    <form:label path="numeroTelefono" for="numeroTelefono">Teléfono:</form:label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <form:input path="capmax" name="capmax" id="capmax" type="number" class="validate" required="true"/>
+                    <form:label path="capmax" for="capmax">Capacidad Maxima:</form:label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <form:input path="urlimagen" name="urlimagen" id="urlimagen" type="text" class="validate" required="true"/>
+                    <form:label path="urlimagen" for="urlimagen">Capacidad Maxima:</form:label>
+                </div>
+            </div>
+
+
+            <p class="center-align">
+                <button class="waves-effect waves-light btn" type="submit"><i class="material-icons right">send</i>Enviar</button>
+            </p>
+        </article>
+
+    </form:form>
+    <c:if test="${not empty error}">
+        <h4><span>${error}</span></h4>
+        <br>
+    </c:if>
+</div>
+<!--JavaScript at end of body for optimized loading-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
 </body>
-</html>
+</html>capmax
