@@ -14,11 +14,11 @@
 
             const map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 10,
-                center: ${coordenadasDefault},
+                center: { "lat": -34.670283, "lng": -58.5638904 },
             });
 
             <c:forEach items="${mascotas}" var="mascota">
-            var coordenadasMascota = ${mascota.direccion}
+            var coordenadasMascota = ${mascota.coordenadas}
             var marker = new google.maps.Marker({
                 position: coordenadasMascota,
                 map: map,

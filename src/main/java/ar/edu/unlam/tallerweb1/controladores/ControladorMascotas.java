@@ -47,15 +47,7 @@ public class ControladorMascotas {
     @RequestMapping(path="/mapa-mascotas", method = RequestMethod.GET)
     public ModelAndView mostrarMapaMascotas() throws InterruptedException, ApiException, IOException{
         ModelMap model = new ModelMap();
-        List<Mascota> mascotas = servicioMascota.listarTodos();
-        String direccion = "Florencio Varela 1903, B1754 San Justo, Provincia de Buenos Aires";
-        String coordenadas = mapaService.convertirDireccionACoordenadas(direccion);
-        model.put("coordenadasDefault", coordenadas);
-
-        for(Mascota mascota : mascotas){
-            mascota.setDireccion(mapaService.convertirDireccionACoordenadas(mascota.getDireccion()));
-        }
-        model.put("mascotas", mascotas);
+        model.put("mascotas", servicioMascota.listarTodos());
         return new ModelAndView("vistaMapaMascotas", model);
     }
 

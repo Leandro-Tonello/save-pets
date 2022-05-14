@@ -19,6 +19,7 @@ public class Mascota {
 	//private String imagen;
 	//private String descripcion;
 	private String direccion;
+	private String coordenadas;
 
 
 	public Mascota() {}
@@ -91,5 +92,13 @@ public class Mascota {
 
 	public void setEspecie(String especie) {
 		this.especie = especie;
+	}
+
+	public String getCoordenadas() {
+		return coordenadas;
+	}
+
+	public void setCoordenadas(String coordenadas) {
+		this.coordenadas = coordenadas;
 	}
 }
