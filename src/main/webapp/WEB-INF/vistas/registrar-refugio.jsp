@@ -59,7 +59,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <form:input path="urlimagen" name="urlimagen" id="urlimagen" type="text" class="validate" required="true"/>
-                    <form:label path="urlimagen" for="urlimagen">Capacidad Maxima:</form:label>
+                    <form:label path="urlimagen" for="urlimagen">Url imagen:</form:label>
                 </div>
             </div>
 

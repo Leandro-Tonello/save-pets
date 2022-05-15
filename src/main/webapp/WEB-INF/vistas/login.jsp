@@ -1,4 +1,4 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+	<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -19,9 +19,9 @@
         <div id="Login">
         <i class="material-icons medium">account_circle</i>  
         <h3>Usuario:<form:input path="email" id="email" class="form-control" /></h3>
-        <h3>Conteseña:<form:input path="password" type="password" id="password" class="form-control"/></h3>
+        <h3>Conteseï¿½a:<form:input path="password" type="password" id="password" class="form-control"/></h3>
         <button id="Boton" class="btn btn-lg btn-primary btn-block" Type="Submit"/>Login</button>
-       	<p id="NoCuenta"><b>¿Aun no tenes cuenta?</b></p>
+       	<p id="NoCuenta"><b>ï¿½Aun no tenes cuenta?</b></p>
         <a href="registrar-usuario"	><b>Registrarme</b></a>
         <a href="mostrar-refugios"	><b>Refugios</b></a>
         </div>

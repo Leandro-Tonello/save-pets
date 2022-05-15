@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
+import ar.edu.unlam.tallerweb1.servicios.*;
 import ar.edu.unlam.tallerweb1.servicios.ServicioRefugio;
 
 import java.io.IOException;
@@ -38,7 +38,11 @@ public class ControladorRefugios {
     @RequestMapping(path = "/registrar-refugio", method = RequestMethod.POST)
     public ModelAndView registrarRefugio(@ModelAttribute("datosRefugio") DatosRefugio datosRefugio) throws InterruptedException, ApiException, IOException {
 	    ModelMap model = new ModelMap();
-	    servicioRefugio.agregarRefugio(datosRefugio);
+	    try{
+	    servicioRefugio.agregarRefugio(datosRefugio);}
+	    catch(RefugioNombreYaExisteException e ){
+	        return registroFallido(model, "Ya existe un refugio con ese nombre");
+        }
 	    return mostrarRefugios();
     }
 
@@ -62,6 +66,11 @@ public class ControladorRefugios {
         ModelMap modelo = new ModelMap();
         modelo.put("listaDeAnimales", servicioRefugio.listarTodos());
         return new ModelAndView("Refugios",modelo);
+    }
+
+    private ModelAndView registroFallido(ModelMap model, String mensaje){
+        model.put("error", mensaje);
+        return new ModelAndView("registrar-refugio", model);
     }
 	
 }

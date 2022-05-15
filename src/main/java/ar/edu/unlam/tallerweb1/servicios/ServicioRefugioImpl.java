@@ -29,6 +29,9 @@ public class ServicioRefugioImpl implements ServicioRefugio {
 	
 	@Override
 	public Refugio agregarRefugio(DatosRefugio datosRefugio) throws InterruptedException, ApiException, IOException {
+		if(repositorioRefugio.buscarNombre(datosRefugio.getNombre())!=null){
+			throw new RefugioNombreYaExisteException();
+		}
 		Refugio nuevoRefugio = new Refugio(datosRefugio);
 		nuevoRefugio.setCoordenadas(mapaService.convertirDireccionACoordenadas(datosRefugio.getDireccion()));
 		repositorioRefugio.guardar(nuevoRefugio);

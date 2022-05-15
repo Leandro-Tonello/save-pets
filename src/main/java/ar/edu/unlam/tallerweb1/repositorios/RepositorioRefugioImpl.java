@@ -31,7 +31,21 @@ public class RepositorioRefugioImpl implements RepositorioRefugio {
 				.uniqueResult();
 	}
 
-    @Override
+	@Override
+	public Refugio buscarNombre(String nombre) {
+		return (Refugio) sessionFactory.getCurrentSession().createCriteria(Refugio.class)
+				.add(Restrictions.eq("nombre", nombre))
+				.uniqueResult();
+	}
+
+	@Override
+	public Refugio buscarCoordenadas(String coordenadas) {
+		return (Refugio) sessionFactory.getCurrentSession().createCriteria(Refugio.class)
+				.add(Restrictions.eq("coordenadas", coordenadas))
+				.uniqueResult();
+	}
+
+	@Override
     public List<Refugio> buscarTodos() {
         return sessionFactory.getCurrentSession()
                 .createCriteria(Refugio.class)
