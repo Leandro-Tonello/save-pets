@@ -1,19 +1,20 @@
-package ar.edu.unlam.tallerweb1.servicios;
+package ar.edu.unlam.tallerweb1.servicios.implementaciones;
 
 import java.io.IOException;
 import java.util.List;
 
-import ar.edu.unlam.tallerweb1.controladores.DatosMascota;
+import ar.edu.unlam.tallerweb1.controladores.dtos.DatosMascota;
+import ar.edu.unlam.tallerweb1.servicios.MapaService;
+import ar.edu.unlam.tallerweb1.servicios.ServicioMascota;
 import com.google.maps.errors.ApiException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import ar.edu.unlam.tallerweb1.modelo.Mascota;
 import ar.edu.unlam.tallerweb1.repositorios.RepositorioMascota;
 
 @Service("ServicioMascota")
-public class ServicioMascotaImpl implements ServicioMascota{
+public class ServicioMascotaImpl implements ServicioMascota {
 
     private RepositorioMascota repositorioMascota;
     private ServicioMascotaImpl servicioMascota;

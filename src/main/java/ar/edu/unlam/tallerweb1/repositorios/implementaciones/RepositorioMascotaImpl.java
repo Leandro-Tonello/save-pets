@@ -1,7 +1,8 @@
-package ar.edu.unlam.tallerweb1.repositorios;
+package ar.edu.unlam.tallerweb1.repositorios.implementaciones;
 
 import java.util.List;
 
+import ar.edu.unlam.tallerweb1.repositorios.RepositorioMascota;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;

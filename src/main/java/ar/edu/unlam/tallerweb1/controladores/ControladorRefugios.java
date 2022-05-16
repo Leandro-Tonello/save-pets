@@ -1,7 +1,9 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
-import ar.edu.unlam.tallerweb1.modelo.Refugio;
+import ar.edu.unlam.tallerweb1.controladores.dtos.DatosRefugio;
 import ar.edu.unlam.tallerweb1.servicios.MapaService;
+import ar.edu.unlam.tallerweb1.servicios.excepciones.RefugioCoordenadasYaExisteException;
+import ar.edu.unlam.tallerweb1.servicios.excepciones.RefugioNombreYaExisteException;
 import com.google.maps.errors.ApiException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,11 +12,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import ar.edu.unlam.tallerweb1.servicios.*;
 import ar.edu.unlam.tallerweb1.servicios.ServicioRefugio;
 
 import java.io.IOException;
-import java.util.List;
 
 @Controller
 public class ControladorRefugios {
@@ -40,6 +40,9 @@ public class ControladorRefugios {
 	    ModelMap model = new ModelMap();
 	    try{
 	    servicioRefugio.agregarRefugio(datosRefugio);}
+	    catch(RefugioCoordenadasYaExisteException e){
+	        return registroFallido(model, "Ya existe un refugio en esa ubicación");
+        }
 	    catch(RefugioNombreYaExisteException e ){
 	        return registroFallido(model, "Ya existe un refugio con ese nombre");
         }

@@ -3,7 +3,7 @@ package ar.edu.unlam.tallerweb1.servicios;
 import java.io.IOException;
 import java.util.List;
 
-import ar.edu.unlam.tallerweb1.controladores.DatosMascota;
+import ar.edu.unlam.tallerweb1.controladores.dtos.DatosMascota;
 import ar.edu.unlam.tallerweb1.modelo.Mascota;
 import com.google.maps.errors.ApiException;
 

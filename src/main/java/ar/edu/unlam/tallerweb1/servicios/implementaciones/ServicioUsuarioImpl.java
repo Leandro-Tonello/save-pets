@@ -1,13 +1,16 @@
-package ar.edu.unlam.tallerweb1.servicios;
+package ar.edu.unlam.tallerweb1.servicios.implementaciones;
 
+import ar.edu.unlam.tallerweb1.servicios.ServicioUsuario;
+import ar.edu.unlam.tallerweb1.servicios.excepciones.ClaveLongitudIncorrectaException;
+import ar.edu.unlam.tallerweb1.servicios.excepciones.ClavesDistintasException;
+import ar.edu.unlam.tallerweb1.servicios.excepciones.UsuarioYaExisteException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import ar.edu.unlam.tallerweb1.controladores.DatosRegistro;
+import ar.edu.unlam.tallerweb1.controladores.dtos.DatosRegistro;
 import ar.edu.unlam.tallerweb1.modelo.Usuario;
 import ar.edu.unlam.tallerweb1.repositorios.RepositorioUsuario;
-import ar.edu.unlam.tallerweb1.repositorios.RepositorioUsuarioImpl;
 
 
 @Service("servicioUsuario")

@@ -27,28 +27,12 @@
     <form:form class="col s12" action="registrar-mascota" method="POST" modelAttribute="datosMascota">
         <h4 class="center-align">REGISTRAR MASCOTA</h4>
         <article class="col s6 offset-s3">
-
-            <!--       <div class="row">
-                       <div class="input-field col s12">
-                           <input id="nombre" type="text" class="validate">
-                           <label for="nombre">Nombre</label>
-                       </div>
-                   </div>-->
-
             <div class="row">
                 <div class="input-field col s12">
                     <form:input path="direccion" type="text" name="direccion" class="validate" required="true"/>
                     <form:label for="direccion" path="direccion">Dirección</form:label>
                 </div>
             </div>
-
-            <!--       <div class="row">
-                       <div class="input-field col s12">
-                           <input id="especie" type="text" class="validate">
-                           <label for="especie">Especie:</label>
-                       </div>
-                   </div>-->
-
 
             <div class="row">
                 <div class="input-field col s12">
@@ -60,6 +44,39 @@
                 </div>
             </div>
 
+            <div class="row">
+                <div class="input-field col s12">
+                    <form:input path="nombre" type="text" name="nombre" />
+                    <form:label for="nombre" path="nombre">¿Sabés su nombre?</form:label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <form:textarea path = "descripcion" name="descripcion" rows = "5" cols = "30" />
+                    <form:label for="descripcion" path="descripcion">Ingresa una breve descripción:</form:label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <form:input path="raza" type="text" name="raza" />
+                    <form:label for="raza" path="raza">¿Sabes su raza?</form:label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <form:select path="pelaje" name="pelaje" >
+                        <form:option value="" selected="true" disabled="disabled"> </form:option>
+                        <form:option value="sin pelo">Sin pelo</form:option>
+                        <form:option value="corto">Pelo Corto</form:option>
+                        <form:option value="largo">Pelo Largo</form:option>
+                        <form:option value="rizado">Pelo Rizado</form:option>
+                    </form:select>
+                    <form:label path="pelaje" for="pelaje">Seleccione uno</form:label>
+                </div>
+            </div>
 
             <p class="center-align ">
                 <button class="waves-effect waves-light btn" type="submit"><i class="material-icons right">send</i>Enviar</button>
