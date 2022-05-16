@@ -1,11 +1,10 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
 
-import ar.edu.unlam.tallerweb1.modelo.Refugio;
+import ar.edu.unlam.tallerweb1.controladores.dtos.DatosLogin;
 import ar.edu.unlam.tallerweb1.modelo.Usuario;
 
 import ar.edu.unlam.tallerweb1.servicios.ServicioLogin;
-import ar.edu.unlam.tallerweb1.servicios.ServicioRefugio;
 import ar.edu.unlam.tallerweb1.servicios.ServicioUsuario;
 
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
-import ar.edu.unlam.tallerweb1.controladores.DatosRegistro;
+import ar.edu.unlam.tallerweb1.controladores.dtos.DatosRegistro;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

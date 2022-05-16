@@ -1,5 +1,9 @@
 package ar.edu.unlam.tallerweb1.controladores;
+import ar.edu.unlam.tallerweb1.controladores.dtos.DatosRegistro;
 import ar.edu.unlam.tallerweb1.servicios.*;
+import ar.edu.unlam.tallerweb1.servicios.excepciones.ClaveLongitudIncorrectaException;
+import ar.edu.unlam.tallerweb1.servicios.excepciones.ClavesDistintasException;
+import ar.edu.unlam.tallerweb1.servicios.excepciones.UsuarioYaExisteException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
