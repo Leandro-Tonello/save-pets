@@ -2,22 +2,17 @@ package ar.edu.unlam.tallerweb1.controladores.dtos;
 
 public class DatosMascota {
 
-    //nombre especie edad imagen descripcion direccion
-
-    //private String nombre;
+    private String nombre;
     private String especie;
-    //private Integer edad;
     //private String imagen;
-    //private String descripcion;
+    private String descripcion;
     private String direccion;
+    private String raza;
+    private String pelaje;
 
-   /* public String getNombre() {
-        return nombre;
-    }
+    public String getNombre() {return nombre;}
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }*/
+    public void setNombre(String nombre) {this.nombre = nombre;}
 
     public String getEspecie() {
         return especie;
@@ -27,29 +22,13 @@ public class DatosMascota {
         this.especie = especie;
     }
 
-   /* public Integer getEdad() {
-        return edad;
-    }
+  /*  public String getImagen() { return imagen; }
 
-    public void setEdad(Integer edad) {
-        this.edad = edad;
-    }
+    public void setImagen(String imagen) {this.imagen = imagen; }*/
 
-    public String getImagen() {
-        return imagen;
-    }
+    public String getDescripcion() {return descripcion; }
 
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }*/
+    public void setDescripcion(String descripcion) {this.descripcion = descripcion; }
 
     public String getDireccion() {
         return direccion;
@@ -59,19 +38,27 @@ public class DatosMascota {
         this.direccion = direccion;
     }
 
-    public DatosMascota(){}
+    public String getRaza() { return raza;}
 
-   /* public DatosMascota(String nombre, String especie, Integer edad, String direccion, String descripcion, String imagen){
-        this.descripcion = descripcion;
-        this.nombre = nombre;
-        this.direccion = direccion;
-        this.edad=edad;
-        this.especie=especie;
-        this.imagen=imagen;
-    }*/
+    public void setRaza(String raza) {this.raza = raza; }
+
+    public String getPelaje() { return pelaje;}
+
+    public void setPelaje(String pelaje) {this.pelaje = pelaje;}
+
+    public DatosMascota(){}
 
     public DatosMascota(String especie, String direccion){
         this.especie = especie;
         this.direccion = direccion;
+    }
+
+    public DatosMascota(String especie, String direccion, String nombre, String descripcion, String raza, String pelaje){
+        this.especie = especie;
+        this.descripcion = descripcion;
+        this.direccion = direccion;
+        this.nombre = nombre;
+        this.raza = raza;
+        this.pelaje = pelaje;
     }
 }
