@@ -24,14 +24,14 @@
 </div>
 </nav>
     <div id="seccion_cartas">  
-      <c:forEach items="${listaDeRefugios}" var="refugio">
+      <c:forEach items="${listaDeMascotas}" var="mascota">
         <div id="cartas" class="card" style="width: 18rem;">
-  			<img src="${refugio.imagen}" class="card-img-top" alt="..." width="30px" height="200px">
+  			<img src="${mascota.imagen}" class="card-img-top" alt="..." width="30px" height="200px">
   			<div class="card-body">
-    		<h5 class="card-title">${refugio.nombre}</h5>
-    		<h5 class="card-title">${refugio.direccion}</h5>
-    		<p class="card-text">Capacidad máxima: ${refugio.capMax}</p>
-    		<a href="mostrar-animales" class="btn btn-primary">Ver animales</a>
+    		<h5 class="card-title">${mascota.especie}</h5>
+    		<h5 class="card-title">${mascota.nombre}</h5>
+    		<p class="card-text">${mascota.descripcion}</p>
+    		<a href="mostrar-animales" class="btn btn-primary">Saber mas</a>
   			</div>
 		</div>
 	  </c:forEach>

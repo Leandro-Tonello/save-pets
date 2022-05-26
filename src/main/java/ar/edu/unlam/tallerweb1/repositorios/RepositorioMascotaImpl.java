@@ -1,0 +1,44 @@
+package ar.edu.unlam.tallerweb1.repositorios;
+
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import ar.edu.unlam.tallerweb1.modelo.Mascota;
+
+import javax.transaction.Transactional;
+
+@Transactional
+@Repository("repositorioMascota")
+public class RepositorioMascotaImpl implements RepositorioMascota {
+
+    private SessionFactory sessionFactory;
+
+    @Autowired
+    public RepositorioMascotaImpl(SessionFactory sessionFactory){
+        this.sessionFactory = sessionFactory;
+    }
+
+
+    @Override
+    public void guardar(Mascota mascota) {
+        sessionFactory.getCurrentSession().save(mascota);
+    }
+
+    @Override
+    public List<Mascota> buscar(String nombre) {
+        return sessionFactory.getCurrentSession().createCriteria(Mascota.class)
+                .add(Restrictions.eq("nombre", nombre))
+                .list();
+    }
+
+    @Override
+    public List<Mascota> buscarTodos() {
+        return sessionFactory.getCurrentSession()
+                .createCriteria(Mascota.class)
+                .list();
+    }
+}

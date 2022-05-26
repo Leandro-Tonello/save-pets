@@ -5,6 +5,7 @@ import ar.edu.unlam.tallerweb1.modelo.Refugio;
 import ar.edu.unlam.tallerweb1.modelo.Usuario;
 
 import ar.edu.unlam.tallerweb1.servicios.ServicioLogin;
+import ar.edu.unlam.tallerweb1.servicios.ServicioMascota;
 import ar.edu.unlam.tallerweb1.servicios.ServicioRefugio;
 import ar.edu.unlam.tallerweb1.servicios.ServicioUsuario;
 
@@ -24,23 +25,27 @@ public class ControladorLogin {
 	private ServicioUsuario servicioUsuario;
 	private ServicioLogin servicioLogin;
 	private ServicioRefugio servicioRefugio;
-
+	private ServicioMascota servicioMascota;
 
 	@Autowired
-	public ControladorLogin(ServicioLogin servicioLogin, ServicioUsuario servicioUsuario, ServicioRefugio servicioRefugio){
+	public ControladorLogin(ServicioMascota servicioMascota,ServicioLogin servicioLogin, ServicioUsuario servicioUsuario, ServicioRefugio servicioRefugios){
 		this.servicioUsuario = servicioUsuario;
-		this.servicioLogin= servicioLogin;		
-		this.servicioRefugio = servicioRefugio;
+		this.servicioLogin= servicioLogin;
+		this.servicioRefugio=servicioRefugios;
+		this.servicioMascota=servicioMascota;
 	}
 
 	@RequestMapping(path = "/", method = RequestMethod.GET)
 	public ModelAndView inicio() {
-		
-		Refugio refugio1 = new Refugio ("Refugio1", "Alberdi 123", 45643322, 20, 10, "https://www.hogarmania.com/archivos/202011/cosas-donar-refugio-animales-portada-668x400x80xX-1.jpg");
-		servicioRefugio.agregarRefugio(refugio1);
-		
-        servicioUsuario.registrarAdmin();
-		return new ModelAndView("redirect:/login");
+		return new ModelAndView("redirect:/home");
+	}
+	
+	@RequestMapping("/home")
+	public ModelAndView irAHome() {
+		ModelMap modelo = new ModelMap();
+        modelo.put("listaDeRefugios", servicioRefugio.listarTodos());
+        modelo.put("listaDeMascotas", servicioMascota.listarTodos());
+        return new ModelAndView("home",modelo);
 	}
 	
 	@RequestMapping("/login")

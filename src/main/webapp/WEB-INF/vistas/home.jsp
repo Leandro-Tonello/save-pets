@@ -1,154 +1,132 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-        <!DOCTYPE html>
-        <html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
 
-        <head>
-    	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-		<link rel="stylesheet" href="css/styles.css">
-        </head>
+<html>
+<head>
+    <!--  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width" initial-scale=1.0>
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
-        <body id="body_home">
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a href="index.html"><img src="transparent-blue-world-earth-logo-circle-5e19bc82a67797.1114106915787449626819.png" alt="..." height="30px"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Opciones
-                </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Destinos</a></li>
-                            <li><a class="dropdown-item" href="#">Excursiones</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Calculador de presupuesto</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <button class="btn btn-primary" href="login">Login</button>
-                    <button class="btn btn-outline-primary" href="registrar-usuario">Registrarse</button>
-                    <input class="form-control me-2" type="search" placeholder="Destino" aria-label="Search">
-                    <button class="btn btn-outline-primary" type="submit">Buscar</button>
-                </form>
-            </div>
-        </div>
-    </nav>
+    <script>
+        function initMap() {
 
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://www.hola.com/imagenes/estar-bien/20200811173405/psicologia-obsesion-viajar/0-854-752/viajar-t.jpg" class="d-block w-100" alt="avion" height="300px">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Elegi tu destino</h5>
-                    <p>Busca entre todos los disponibles</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://www.hola.com/imagenes/estar-bien/20200811173405/psicologia-obsesion-viajar/0-854-752/viajar-t.jpg" class="d-block w-100" alt="bariloche" height="300px">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Bariloche</h5>
-                    <p>Descurbi el sur de Argentina</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://www.hola.com/imagenes/estar-bien/20200811173405/psicologia-obsesion-viajar/0-854-752/viajar-t.jpg" class="d-block w-100" alt="cafayate" height="300px">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Cafayate</h5>
-                    <p>Explora el norte del pais</p>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-<div id="Titulo_cartas_div">
-<h3 id="Titulo_cartas">Paquetes exclusivos<a id="vinuclo_cartas" href="#">ver todos > </a></h3>
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 10,
+                center: { "lat": -34.670283, "lng": -58.5638904 },
+            });
+
+            <c:forEach items="${mascotas}" var="mascota">
+            var coordenadasMascota = ${mascota.coordenadas}
+            var marker = new google.maps.Marker({
+                position: coordenadasMascota,
+                map: map,
+            });
+            </c:forEach>
+        }
+
+        window.initMap = initMap;
+
+    </script>
+    
+</head>
+
+<body>
+
+<nav>
+<div id="navegador" class="row">
+<div class="col"><a href="home"><h1>Save-Pets</h1></a></div>
+<div id="nav_item" class="col"><a href="mostrar-mascotas"><h3>Mascotas</h3></a></div>
+<div id="nav_item" class="col"><a href="registrar-mascota-en-refugio"><h3>Registrar mascota</h3></a></div>
+<div id="nav_item" class="col"><a href="mostrar-refugios"><h3>Refugios</h3></a></div>
+<div id="nav_item" class="col"><a href="registrar-refugio"><h3>Registrar refugio</h3></a></div>
+<div id="botones_home" class="col">
+<a href="registrar-usuario"><button class="btn btn-outline-primary">Registrarme</button></a>
+<a href="login"><button class="btn btn-outline-primary">Login</button></a>
 </div>
-<hr>
-    <div id="seccion_cartas">  
-      <c:forEach items="${listaDeItinerarios}" var="itinerario">
-        <div id="cartas" class="card" style="width: 18rem;">
-  			<img src="${itinerario.destinos.imagen}" class="card-img-top" alt="..." width="30px" height="200px">
-  			<div class="card-body">
-    		<h5 class="card-title">${itinerario.destinos.nombre}</h5>
-    		<h5 class="card-title">${itinerario.precioTotal}</h5>
-    		<p class="card-text">${itinerario.destinos.tipoDeDestino.nombre}</p>
-    		<a href="#" class="btn btn-primary">Comprar</a>
-  			</div>
-		</div>
-	  </c:forEach>
-    </div>
-    <div>
-    <div id="Titulo_cartas_div">
-<h3 id="Titulo_cartas">Excursiones increibles<a id="vinuclo_cartas" href="#">ver todos > </a></h3>
-        </div>
-         <hr>
-        <div id="seccion_cartas">
-        <c:forEach items="${listaDeExcursiones}" var="excursiones">
-        <div id="cartas" class="card" style="width: 18rem;">
-  			<img src="${excursiones.link}" class="card-img-top" alt="..." width="30px" height="200px">
-  			<div class="card-body">
-    		<h5 class="card-title">${excursiones.nombre}</h5>
-    		<p class="card-text">${excursiones.destinoDeExcursion.nombre}</p>
-    		<a href="#" class="btn btn-primary">Ver detalles</a>
-  			</div>
-		</div>
-	  </c:forEach>
-        </div>
-    </div>
-    <div>
-    <div id="Titulo_cartas_div">
-<h3 id="Titulo_cartas">Destinos disponibles<a id="vinuclo_cartas" href="#">ver todos > </a></h3>
-        </div>
-         <hr>
-        <div id="seccion_cartas">
-        <c:forEach items="${listaDeDestinos}" var="destinos">
-        <div id="cartas" class="card" style="width: 18rem;">
-  			<img src="${destinos.imagen}" class="card-img-top" alt="..." width="30px" height="200px">
-  			<div class="card-body">
-    		<h5 class="card-title">${destinos.nombre}</h5>
-    		<p class="card-text">${destinos.tipoDeDestino.nombre}</p>
-    		<a href="#" class="btn btn-primary">Ver detalles</a>
-  			</div>
-		</div>
-	  </c:forEach>
-        </div>
-    </div>
-    <hr>
-    <div>
-        <a id="Titulo_cartas" href="#">Disfruta la playa</a>
-    </div>
-	<hr>
-    <footer class="footer">
-        <div class="">
-            © 2014 Copyright Taller Web 1
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-        </div>
-    </footer>
+</div>
+</nav>
 
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<div class="row">
+	<div id="menu-lateral"class="col-3">
+	<ul>
+	<ul><b>Mascotas</b></ul>
+	<a href="buscarMascota"><li>Buscar por nombre</li></a>
+	<a href="buscarMascota"><li>Buscar por tipo</li></a>
+	<a href="buscarMascota"><li>Buscar por raza</li></a>
+	<ul><b>Refugios</b></ul>
+	<a href="buscarRefugio"><li>Buscar por nombre</li></a>
+	<a href="buscarRefugio"><li>Buscar por barrio</li></a>
+	</ul>
+	</div>
+	<div class="col-9">
+	<h3 id="titulo_mapa">Mapa de mascotas</h3>
+	<div id="map">
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDruCZjP_qnHh5ikKTqJWJWPAfM9CkhzIo&callback=initMap"></script>
+	</div>
+	</div>
+	</div>
+	<h2 id="titulo_index_refugios">Nuestro refugios</h2>
+	<div id="seccion" class="container">
+	<div class="row">
+	<div class="col">
+	<div id="seccion_cartas">  
+      <c:forEach items="${listaDeRefugios}" var="refugio">
+        <div id="cartas" class="card" style="width: 18rem;">
+  			<img src="${refugio.imagen}" class="card-img-top" alt="..." width="30px" height="200px">
+  			<div class="col card-body">
+    		<h5 class="card-title">${refugio.nombre}</h5>
+    		<h5 class="card-title">${refugio.direccion}</h5>
+    		<p class="card-text">Capacidad maxima: ${refugio.capMax}</p>
+    		<a href="mostrar-animales" class="mt-2 btn btn-primary">Ver animales</a>
+  			</div>
+		</div>
+	  </c:forEach>
+    </div>
+	</div>
+	</div>
+	</div>
+	<div id="center">
+	<a href="mostrar-refugios">Ver todos</a>
+	</div>
+	<h2 id="titulo_index_refugios">Mascotas disponibles</h2>
+	<div id="seccion" class="container">
+	<div class="row">
+	<div class="col">
+	<div id="seccion_cartas">  
+      <c:forEach items="${listaDeMascotas}" var="mascota">
+        <div id="cartas" class="card" style="width: 18rem;">
+  			<img src="${mascota.imagen}" class="card-img-top" alt="..." width="30px" height="200px">
+  			<div class="col card-body">
+    		<h5 class="card-title">${mascota.especie}</h5>
+    		<h5 class="card-title">${mascota.nombre}</h5>
+    		<p class="card-text">${mascota.descripcion}</p>
+    		<a href="mostrar-animales" class="mt-2 btn btn-primary">Saber mas</a>
+  			</div>
+		</div>
+	  </c:forEach>
+    </div>
+	</div>
+	</div>
+	</div>
+	<div id="center">
+	<a href="mostrar-mascotas">Ver todos</a>
+	</div>
+	<footer>
+	<div class="row">
+	<div class="col">
+	<h4 id="footer">Nuestra Web - Grupo 1</h4>
+	</div>
+	</div>
+	
+	</footer>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</html>
 
-        </html>
+
+

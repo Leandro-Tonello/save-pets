@@ -21,11 +21,6 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
         this.repo = servicioUsuarioDao;
     }
 
-	public void registrarAdmin() {
-		Usuario admin= new Usuario("admin", "admin",10000000000000.0);
-		repo.guardar(admin);
-	}
-	
     public Usuario registrar(DatosRegistro datosRegistro) {
     	if(lasClavesSonDistintas(datosRegistro)){
             throw new ClavesDistintasException();

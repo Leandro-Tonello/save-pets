@@ -25,10 +25,10 @@ public class RepositorioRefugioImpl implements RepositorioRefugio {
 	}
 
 	@Override
-	public Refugio buscar(Long id) {
-		return (Refugio) sessionFactory.getCurrentSession().createCriteria(Refugio.class)
-				.add(Restrictions.eq("id", id))
-				.uniqueResult();
+	public List<Refugio> buscar(String nombre) {
+		return sessionFactory.getCurrentSession().createCriteria(Refugio.class)
+				.add(Restrictions.eq("nombre", nombre))
+				.list();
 	}
 
     @Override
