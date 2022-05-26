@@ -4,29 +4,29 @@
 <html>
 <head>
     <!-- Bootstrap core CSS -->
-	    <link rel="stylesheet" href="css/styles.css">
-	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <body id="body_registro">
 
-    <div class="contenedor">
-        <h1 id="Titulo">Bienvenidos</h1>
-        <form:form action="registrar-usuario" method="POST" modelAttribute="datosRegistro">
-        <div id="Login2">
-            <i class="material-icons medium">account_circle</i>  
+<div class="contenedor">
+    <h1 id="Titulo">Bienvenidos</h1>
+    <form:form action="registrarme" method="POST" modelAttribute="datosRegistro">
+    <div id="Login2">
+        <i class="material-icons medium">account_circle</i>
         <h3 id="caja">Usuario:<form:input path="email" id="email" class="form-control"/></h3>
-        <h3 id="caja">Contreseña:<form:input path="clave" type="password" id="password" class="form-control"/></h3>
-        <h3 id="caja">Repetir contraseña:<form:input path="repiteClave" type="password" id="password" class="form-control"/></h3>
+        <h3 id="caja">Contrese?a:<form:input path="clave" type="password" id="password" class="form-control"/></h3>
+        <h3 id="caja">Repetir contrase?a:<form:input path="repiteClave" type="password" id="password" class="form-control"/></h3>
         <button id="Boton" class="btn btn-lg btn-primary btn-block" Type="Submit"/>Registrarme</button>
-         </form:form>
-         <c:if test="${not empty error}">
+        </form:form>
+        <c:if test="${not empty error}">
             <h4><span>${error}</span></h4>
             <br>
         </c:if>
-        </div>
     </div>
-    </div>
+</div>
+</div>
 
 
 

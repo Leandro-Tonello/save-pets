@@ -26,60 +26,42 @@
     </div>
 </nav>
 
-<body id="body_patas">
-<div id="formulario">
-    <h4 id="titulo">REGISTRAR MASCOTA</h4>
-    <form:form class="col s12" action="registrar-mascota" method="POST" modelAttribute="datosMascota">
-            <div id="formulario_fila" class="row">
-                <div class="col">
-                    <form:input path="direccion" type="text" name="direccion" class="validate" required="true"/>
-                    <form:label for="direccion" path="direccion">Direccion</form:label>
-                </div>
-            </div>
+<body  id="body_patas">
 
-            <div id="formulario_fila" class="row">
-                <div class="col">
-                    <form:select path="especie" class="validate" name="especie" required="true">
-                        <form:option value="perro">Perro</form:option>
-                        <form:option value="gato">Gato</form:option>
-                    </form:select>
-                    <form:label path="especie" for="especie">Seleccione uno</form:label>
-                </div>
+<div id="formulario" class="" >
+    <h4 id="titulo"	>REGISTRAR MASCOTA EN REFUGIO</h4>
+    <form:form action="registrar-mascota-en-refugio" method="POST" modelAttribute="datosMascota" class="col s12">
+        <div id="formulario_fila" class="row">
+            <div class="col">
+                <form:input placeholder="Nombre" path="nombre" name="nombre" id="nombre" type="text" class="form-control me-2" required="true"/>
             </div>
+        </div>
 
         <div id="formulario_fila" class="row">
             <div class="col">
-                    <form:input path="nombre" type="text" name="nombre" />
-                    <form:label for="nombre" path="nombre">Sabes su nombre?</form:label>
-                </div>
+                <form:input placeholder="Especie" path="especie" name="especie" id="especie" type="text" class="form-control me-2" required="true"/>
+
             </div>
+        </div>
+
+<%--        <div id="formulario_fila" class="row">--%>
+<%--            <div class="col">--%>
+<%--               <form:input placeholder="Edad" path="edad" name="edad" id="edad" type="number" class="form-control me-2" required="true"/>--%>
+<%--            </div>--%>
+<%--        </div>--%>
 
         <div id="formulario_fila" class="row">
             <div class="col">
-                    <form:textarea path = "descripcion" name="descripcion" rows = "5" cols = "30" />
-                    <form:label for="descripcion" path="descripcion">Ingresa una breve descripcion:</form:label>
-                </div>
+                <form:input placeholder="Imagen" path="imagen" name="imagen" id="imagen" type="text" class="form-control me-2" required="true"/>
             </div>
+        </div>
 
         <div id="formulario_fila" class="row">
             <div class="col">
-                    <form:input path="raza" type="text" name="raza" />
-                    <form:label for="raza" path="raza">Sabes su raza?</form:label>
-                </div>
+                <form:input placeholder="Descripcion" path="descripcion" name="descripcion" id="descripcion" type="text" class="form-control me-2" required="true"/>
             </div>
+        </div>
 
-        <div id="formulario_fila" class="row">
-            <div class="col">
-                    <form:select path="pelaje" name="pelaje" >
-                        <form:option value="" selected="true" disabled="disabled"> </form:option>
-                        <form:option value="sin pelo">Sin pelo</form:option>
-                        <form:option value="corto">Pelo Corto</form:option>
-                        <form:option value="largo">Pelo Largo</form:option>
-                        <form:option value="rizado">Pelo Rizado</form:option>
-                    </form:select>
-                    <form:label path="pelaje" for="pelaje">Seleccione uno</form:label>
-                </div>
-            </div>
 
         <div id="boton_formulario" class="row-8">
             <div class="col">
@@ -87,10 +69,11 @@
             </div>
         </div>
     </form:form>
-    <c:if test="${not empty error}">
-        <h4><span>${error}</span></h4>
-        <br>
-    </c:if>
+</div>
+<c:if test="${not empty error}">
+    <h4><span>${error}</span></h4>
+    <br>
+</c:if>
 </div>
 <!--JavaScript at end of body for optimized loading-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

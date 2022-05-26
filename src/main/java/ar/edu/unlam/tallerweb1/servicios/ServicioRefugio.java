@@ -10,6 +10,6 @@ import com.google.maps.errors.ApiException;
 public interface ServicioRefugio {
 
 	Refugio agregarRefugio(DatosRefugio datosRefugio) throws InterruptedException, ApiException, IOException;
-	Refugio buscarRefugio(Long id);
+	Refugio buscarRefugioPorNombre(String nombre);
 	List<Refugio> listarTodos();
 }

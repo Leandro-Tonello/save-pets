@@ -4,7 +4,7 @@ public class DatosMascota {
 
     private String nombre;
     private String especie;
-    //private String imagen;
+    private String imagen;
     private String descripcion;
     private String direccion;
     private String raza;
@@ -22,9 +22,9 @@ public class DatosMascota {
         this.especie = especie;
     }
 
-  /*  public String getImagen() { return imagen; }
+    public String getImagen() { return imagen; }
 
-    public void setImagen(String imagen) {this.imagen = imagen; }*/
+    public void setImagen(String imagen) {this.imagen = imagen; }
 
     public String getDescripcion() {return descripcion; }
 

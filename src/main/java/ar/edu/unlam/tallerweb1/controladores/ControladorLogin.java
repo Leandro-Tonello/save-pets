@@ -5,6 +5,8 @@ import ar.edu.unlam.tallerweb1.controladores.dtos.DatosLogin;
 import ar.edu.unlam.tallerweb1.modelo.Usuario;
 
 import ar.edu.unlam.tallerweb1.servicios.ServicioLogin;
+import ar.edu.unlam.tallerweb1.servicios.ServicioMascota;
+import ar.edu.unlam.tallerweb1.servicios.ServicioRefugio;
 import ar.edu.unlam.tallerweb1.servicios.ServicioUsuario;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,18 +24,31 @@ public class ControladorLogin {
 
 	private ServicioUsuario servicioUsuario;
 	private ServicioLogin servicioLogin;
+	private ServicioRefugio servicioRefugio;
+	private ServicioMascota servicioMascota;
 
 	@Autowired
-	public ControladorLogin(ServicioLogin servicioLogin, ServicioUsuario servicioUsuario){
+	public ControladorLogin(ServicioLogin servicioLogin, ServicioUsuario servicioUsuario, ServicioMascota servicioMascota, ServicioRefugio servicioRefugios){
 		this.servicioUsuario = servicioUsuario;
 		this.servicioLogin= servicioLogin;
+		this.servicioRefugio=servicioRefugios;
+		this.servicioMascota=servicioMascota;
 	}
 
 	@RequestMapping(path = "/", method = RequestMethod.GET)
 	public ModelAndView inicio() {
-		return new ModelAndView("redirect:/login");
+		return new ModelAndView("redirect:/home");
 	}
-	
+
+	@RequestMapping("/home")
+	public ModelAndView irAHome() {
+		ModelMap modelo = new ModelMap();
+		modelo.put("listaDeRefugios", servicioRefugio.listarTodos());
+		modelo.put("listaDeMascotas", servicioMascota.listarTodos());
+		return new ModelAndView("home",modelo);
+	}
+
+
 	@RequestMapping("/login")
 	public ModelAndView irALogin() {
 

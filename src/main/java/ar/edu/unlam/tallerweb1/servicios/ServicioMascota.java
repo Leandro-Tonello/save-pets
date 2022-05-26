@@ -10,7 +10,8 @@ import com.google.maps.errors.ApiException;
 public interface ServicioMascota {
 
     Mascota agregarMascota(DatosMascota datosMascota) throws InterruptedException, ApiException, IOException;
-    Mascota buscarMascota(Long id);
+    Mascota agregarMascotaARefugio(DatosMascota datosMascota);
+    List<Mascota> buscarMascota(String nombre);
     List<Mascota> listarTodos();
 
 }
