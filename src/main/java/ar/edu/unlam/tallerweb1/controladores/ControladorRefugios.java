@@ -1,6 +1,6 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
-import ar.edu.unlam.tallerweb1.controladores.dtos.DatosRefugio;
+import ar.edu.unlam.tallerweb1.controladores.dtos.*;
 import ar.edu.unlam.tallerweb1.servicios.MapaService;
 import ar.edu.unlam.tallerweb1.servicios.excepciones.RefugioCoordenadasYaExisteException;
 import ar.edu.unlam.tallerweb1.servicios.excepciones.RefugioNombreYaExisteException;
@@ -74,6 +74,20 @@ public class ControladorRefugios {
     private ModelAndView registroFallido(ModelMap model, String mensaje){
         model.put("error", mensaje);
         return new ModelAndView("registrar-refugio", model);
+    }
+
+    @RequestMapping(path = "/buscarRefugio", method = RequestMethod.GET)
+    public ModelAndView buscarRefugio(){
+        ModelMap modelo = new ModelMap();
+        modelo.put("datosRefugio", new DatosRefugio());
+        return new ModelAndView("buscarRefugio", modelo);
+    }
+
+    @RequestMapping(path = "/buscarRefugio", method = RequestMethod.POST)
+    public ModelAndView buscarRefugio(@ModelAttribute("datosRefugio") DatosRefugio datosRefugio){
+        ModelMap modelo = new ModelMap();
+        modelo.put("refugio", servicioRefugio.buscarRefugioPorNombre(datosRefugio.getNombre()));
+        return new ModelAndView("buscarRefugio", modelo);
     }
 	
 }

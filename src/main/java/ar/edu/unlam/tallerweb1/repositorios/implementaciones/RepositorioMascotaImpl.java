@@ -37,6 +37,13 @@ public class RepositorioMascotaImpl implements RepositorioMascota {
     }
 
     @Override
+    public List<Mascota> buscarNombre(String nombre) {
+        return sessionFactory.getCurrentSession().createCriteria(Mascota.class)
+                .add(Restrictions.eq("nombre", nombre))
+                .list();
+    }
+
+    @Override
     public List<Mascota> buscarTodos() {
         return sessionFactory.getCurrentSession()
                 .createCriteria(Mascota.class)

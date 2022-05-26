@@ -35,8 +35,15 @@ public class ServicioMascotaImpl implements ServicioMascota {
     }
 
     @Override
-    public Mascota buscarMascota(Long id) {
-        return repositorioMascota.buscar(id);
+    public Mascota agregarMascotaARefugio(DatosMascota datosMascota) {
+        Mascota nuevaMascota = new Mascota(datosMascota);
+        repositorioMascota.guardar(nuevaMascota);
+        return nuevaMascota;
+    }
+
+    @Override
+    public List<Mascota> buscarMascota(String nombre) {
+        return repositorioMascota.buscarNombre(nombre);
     }
 
     @Override

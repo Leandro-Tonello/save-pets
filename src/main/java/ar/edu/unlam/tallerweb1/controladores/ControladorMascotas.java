@@ -49,5 +49,47 @@ public class ControladorMascotas {
         return new ModelAndView("vistaMapaMascotas", model);
     }
 
+    @RequestMapping(path = "/registrar-mascota-en-refugio", method = RequestMethod.GET)
+    public ModelAndView mostrarFormularioRegistroMascotaEnRefugio(){
+        ModelMap model = new ModelMap();
+        model.put("datosMascota", new DatosMascota());
+        return new ModelAndView("registrar-mascota-en-refugio", model);
+    }
+
+    @RequestMapping(path = "/registrar-mascota-en-refugio", method = RequestMethod.POST)
+    public ModelAndView registrarMascotaEnRefugio(@ModelAttribute("datosMascota") DatosMascota datosMascota){
+        ModelMap model = new ModelMap();
+        servicioMascota.agregarMascotaARefugio(datosMascota);
+        return mostrarFormularioRegistroMascotaEnRefugio();
+    }
+
+    @RequestMapping(path = "/buscarMascota", method = RequestMethod.GET)
+    public ModelAndView buscarMascota(){
+        ModelMap modelo = new ModelMap();
+        modelo.put("datosMascota", new DatosMascota());
+        return new ModelAndView("buscarMascota", modelo);
+    }
+
+    @RequestMapping(path = "/buscarMascota", method = RequestMethod.POST)
+    public ModelAndView mascotaBuscada(@ModelAttribute("datosMascota") DatosMascota datosMascota){
+        ModelMap modelo = new ModelMap();
+        modelo.put("listaDeMascotas", servicioMascota.buscarMascota(datosMascota.getNombre()));
+        return new ModelAndView("buscarMascota", modelo);
+    }
+
+    @RequestMapping(path = "/mostrar-mascotas", method = RequestMethod.GET)
+    public ModelAndView mostrarAnimales(){
+        ModelMap modelo = new ModelMap();
+        modelo.put("listaDeMascotas", servicioMascota.listarTodos());
+        return new ModelAndView("Mascotas",modelo);
+    }
+
+    @RequestMapping(path = "/mostrar-descripcion", method = RequestMethod.GET)
+    public ModelAndView mascotaDescripcion(){
+        ModelMap modelo = new ModelMap();
+        modelo.put("listaDeMascotas", servicioMascota.listarTodos());
+        return new ModelAndView("mascota-descripcion",modelo);
+    }
+
 
 }
